@@ -10,9 +10,9 @@
 #include <DHT_U.h>
 #include <time.h>
 
-#define DHTPININ 2     // Indoor DHT
+#define DHTPININ 2      // Indoor DHT
 #define DHTPINOUT 4     // Outdoor DHT
-#define RELAYPIN 7    // Relay trigger Pin
+#define RELAYPIN 7      // Relay trigger Pin
 #define HUMIDITIYLED 12
 #define DUSTPOLLUTIONLED 8
 #define DHTTYPE DHT22
@@ -43,7 +43,6 @@ void setup()
 void loop()
 {
     delay(2000);
-    //Read data and store it to variables hum and temp
     humIn = dhtIn.readHumidity();
     tempIn = dhtIn.readTemperature();
     humOut = dhtOut.readHumidity();
@@ -65,7 +64,7 @@ void loop()
       digitalWrite(HUMIDITIYLED, LOW);
       digitalWrite(DUSTPOLLUTIONLED, LOW);
     }
-    delay(2000); //Delay 2 sec.
+    delay(2000);
 }
 
 bool fineDustPollution(){
@@ -91,7 +90,6 @@ void stopFan(){
 }
 
 void serialOutput(float humIn, float humOut, float tempIn, float tempOut){
-  //Print temp and humidity values to serial monitor
   Serial.print("Sensor IN -> ");
   Serial.print("Humidity: ");
   Serial.print(humIn);
