@@ -16,8 +16,8 @@
 #define HUMIDITIYLED 12
 #define DUSTPOLLUTIONLED 8
 #define DHTTYPE DHT22
-DHT dhtIn(DHTPININ, DHTTYPE); // Init DHT sensor
-DHT dhtOut(DHTPINOUT, DHTTYPE); // Init DHT sensor
+DHT dhtIn(DHTPININ, DHTTYPE); // Init DHT Indoor sensor
+DHT dhtOut(DHTPINOUT, DHTTYPE); // Init DHT Outdoor sensor
 
 
 //Variables
