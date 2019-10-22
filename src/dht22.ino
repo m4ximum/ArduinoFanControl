@@ -14,7 +14,7 @@
 #define DHTPINOUT 4     // Outdoor DHT
 #define RELAYPIN 7      // Relay trigger Pin
 #define HUMIDITIYLED 12
-#define DUSTPOLLUTIONLED 8
+
 #define DHTTYPE DHT22
 DHT dhtIn(DHTPININ, DHTTYPE); // Init DHT sensor
 DHT dhtOut(DHTPINOUT, DHTTYPE); // Init DHT sensor
@@ -37,7 +37,6 @@ void setup()
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN, HIGH);
   pinMode(HUMIDITIYLED, OUTPUT);
-  pinMode(DUSTPOLLUTIONLED, OUTPUT);
 }
 
 void loop()
@@ -56,13 +55,9 @@ void loop()
       startFan();
       digitalWrite(HUMIDITIYLED, HIGH);
       delay(10000); //10sec delay
-    }/*else if(fineDustPollution()){
-      startFan();
-      digitalWrite(DUSTPOLLUTIONLED, HIGH);
-    }*/else{
+    }else{
       stopFan();
       digitalWrite(HUMIDITIYLED, LOW);
-      digitalWrite(DUSTPOLLUTIONLED, LOW);
     }
     delay(2000);
 }
