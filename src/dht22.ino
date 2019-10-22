@@ -8,7 +8,6 @@
  */
 
 #include <DHT_U.h>
-#include <time.h>
 
 #define DHTPININ 2      // Indoor DHT
 #define DHTPINOUT 4     // Outdoor DHT
